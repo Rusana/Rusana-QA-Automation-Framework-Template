@@ -18,7 +18,7 @@ public class HomeWork17 extends BaseTest{
         options.addArguments("--remote-allow-origins=*");
 
         WebDriver driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
 
         String url= "https://qa.koel.app/";
         driver.get(url);
@@ -35,10 +35,17 @@ public class HomeWork17 extends BaseTest{
         WebElement logIn=driver.findElement(By.cssSelector("[type='submit']"));
         logIn.click();
 
-//        String currentURL=
+        WebElement playList=driver.findElement(By.cssSelector("[class='fa fa-plus-circle create']"));
+        playList.click();
+        WebElement name= driver.findElement(By.cssSelector("[name='name']"));
+        name.click();
+        name.clear();
+        name.sendKeys("Algorithms");
 
+        String playListUrl="https://qa.koel.app/#!/playlist/73263";
+        driver.get(playListUrl);
 
-        Assert.assertEquals(driver.getCurrentUrl(),url);
+        Assert.assertEquals(driver.getCurrentUrl(),playListUrl);
         driver.quit();
 
     }
