@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,10 +9,15 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
+=======
+import org.testng.annotations.Test;
+
+>>>>>>> Stashed changes
 public class HomeWork17 extends BaseTest{
 
     @Test
 
+<<<<<<< Updated upstream
     public void addSongToPlaylist (){
 
         ChromeOptions options=new ChromeOptions();
@@ -47,6 +53,10 @@ public class HomeWork17 extends BaseTest{
 
         Assert.assertEquals(driver.getCurrentUrl(),playListUrl);
         driver.quit();
+=======
+    public void addSongToPlaylist(){
+
+>>>>>>> Stashed changes
 
     }
 }

@@ -21,8 +21,16 @@ public class LoginTests extends BaseTest {
 
         String url = "https://qa.koel.app/";
         driver.get(url);
+<<<<<<< Updated upstream
 
         Assert.assertEquals(driver.getCurrentUrl(),url );
+=======
+        WebElement emailLogin= driver.findElement(By.cssSelector("[type='email']"));
+        emailLogin.click();
+        emailLogin.clear();
+        emailLogin.sendKeys();
+        Assert.assertEquals(driver.getCurrentUrl(), url);
+>>>>>>> Stashed changes
         driver.quit();
     }
 }
