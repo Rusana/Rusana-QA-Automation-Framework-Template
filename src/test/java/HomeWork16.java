@@ -26,11 +26,15 @@ public class HomeWork16 extends BaseTest{
 
         WebElement registration= driver.findElement(By.cssSelector("[href='registration']"));
         registration.click();
+<<<<<<< Updated upstream
 
         String registUrl ="https://qa.koel.app/registration";
         driver.get (registUrl);
 
         Assert.assertEquals(driver.getCurrentUrl(), registUrl);
+=======
+        Assert.assertEquals(driver.getCurrentUrl(), url);
+>>>>>>> Stashed changes
         driver.quit();
 
 
