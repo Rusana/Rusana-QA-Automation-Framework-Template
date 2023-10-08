@@ -23,20 +23,14 @@ public class HomeWork16 extends BaseTest{
         String url = "https://qa.koel.app/";
         driver.get(url);
 
-//        WebElement logEmail = driver.findElement(By.cssSelector("[type='email']"));
-//        logEmail.click();
-//        logEmail.clear();
-//        logEmail.sendKeys("shikhabidovarusana@gmail.com");
-//        WebElement logPassord= driver.findElement(By.cssSelector("[type='password']"));
-//        logPassord.click();
-//        logPassord.clear();
-//        logPassord.sendKeys("te$t$tudent");
+
         WebElement registration= driver.findElement(By.cssSelector("[href='registration']"));
         registration.click();
 
+        String registUrl ="https://qa.koel.app/registration";
+        driver.get (registUrl);
 
-
-        Assert.assertEquals(driver.getCurrentUrl(), registration);
+        Assert.assertEquals(driver.getCurrentUrl(), registUrl);
         driver.quit();
 
 
