@@ -18,12 +18,12 @@ public class HomeWork17 extends BaseTest{
         options.addArguments("--remote-allow-origins=*");
 
         WebDriver driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         String url= "https://qa.koel.app/";
         driver.get(url);
 
-        WebElement logEmail= driver.findElement(By.cssSelector("[type='email']"));
+        WebElement logEmail= driver.findElement(By.xpath("//input[@type='email']"));
         logEmail.click();
         logEmail.clear();
         logEmail.sendKeys("shikhabidovarusana@gmail.com");
