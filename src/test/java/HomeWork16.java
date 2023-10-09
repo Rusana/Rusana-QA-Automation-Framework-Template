@@ -6,7 +6,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.nio.file.WatchEvent;
 import java.time.Duration;
 
 public class HomeWork16 extends BaseTest{
