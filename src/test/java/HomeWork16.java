@@ -31,6 +31,5 @@ public class HomeWork16 extends BaseTest{
         Assert.assertEquals(driver.getCurrentUrl(), registUrl);
         driver.quit();
 
-
     }
 }
