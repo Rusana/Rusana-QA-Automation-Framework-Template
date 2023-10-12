@@ -4,11 +4,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeSuite;
 
 public class BaseTest {
-    static WebDriver driver;
-    WebDriver wait;
+//    WebDriver wait;
 
     @BeforeSuite
     static void setupClass() {
         WebDriverManager.chromedriver().setup();
+
     }
 }
