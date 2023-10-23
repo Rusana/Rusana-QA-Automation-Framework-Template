@@ -20,19 +20,25 @@ public class HomeWork17 extends BaseTest{
         logPassword.clear();
         logPassword.sendKeys("te$t$tudent");
 
-        WebElement logIn=driver.findElement(By.cssSelector("[type='submit']"));
-        logIn.click();
+        WebElement buttonLogIn=driver.findElement(By.cssSelector("[type='submit']"));
+        buttonLogIn.click();
 
-        WebElement allSong =driver.findElement(By.cssSelector("[class='songs']"));
-        allSong.click();
+        WebElement buttonAllSong =driver.findElement(By.cssSelector("[class='songs']"));
+        buttonAllSong.click();
+        Thread.sleep(2000);
 
-        WebElement songAdd = driver.findElement(By.cssSelector("section#songResultsWrapper tr.song.item td.title"));
-        songAdd.click();
+        WebElement nameSong= driver.findElement(By.xpath("//tr[@class='song-item playing selected']//td[@class='title']"));
+        nameSong.click();
 
-        WebElement name= driver.findElement(By.cssSelector("[name='name']"));
-        name.click();
-        name.clear();
-        name.sendKeys("Hi");
+        WebElement choseSong = driver.findElement(By.xpath("//section[@id='songResultsWrapper']//tr[@class='song-item']"));
+        choseSong.click();
+
+        WebElement buttonAddSong= driver.findElement(By.xpath("//button[@class='btn-add-to']"));
+        buttonAddSong.click();
+//
+        WebElement newPlayList= driver.findElement(By.cssSelector(""));
+        newPlayList.clear();
+        newPlayList.sendKeys("Hi");
 Thread.sleep(5000); //slow go for good to see your work in IJ
         String playListUrl="https://qa.koel.app/#!/home";
 
