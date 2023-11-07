@@ -15,11 +15,13 @@ public class HomeWork17 extends BaseTest { // Объявление класса 
         clickButtonAllSong(); // Переход к разделу "Все песни"
         clickNameSong(); // Поиск и клик по имени песни (например, "Pluto")
         clickbuttonAddSong();
-        clickplaylist();  // Поиск и клик по элементу "Плейлист"
+        clickplaylist();// Поиск и клик по элементу "Плейлист"
+        Assert.assertTrue(getNotificationText().contains(expectedSongAddedMessage)); // Проверка фактичес (). contains(expectedSongAddedMessage));
     }
+
     public String getNotificationText() { // Метод для получения текстового сообщения об успешном добавлении песни в плейлист
         WebElement notificationElement = driver.findElement(By.cssSelector("div.success.show"));
-        Assert.assertTrue(getNotificationText().contains(expectedSongAddedMessage)); // Проверка фактичес (). contains(expectedSongAddedMessage));
+//        Assert.assertTrue(getNotificationText().contains(expectedSongAddedMessage)); // Проверка фактичес (). contains(expectedSongAddedMessage));
         return notificationElement.getText();
     }
 

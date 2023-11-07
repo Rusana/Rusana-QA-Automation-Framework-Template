@@ -50,7 +50,7 @@ public class BaseTest {
     }
 
     protected void clickNameSong() throws InterruptedException {
-        WebElement nameSong = driver.findElement(By.xpath("//section[@id='songsWrapper']//td[contains(text(),'Pluto')]"));
+        WebElement nameSong = driver.findElement(By.xpath("//section[@id='songsWrapper']//td[contains(text(),'Algorithms')]"));
         nameSong.click();
         Thread.sleep(500);
     }
