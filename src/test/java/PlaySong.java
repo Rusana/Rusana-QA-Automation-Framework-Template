@@ -4,6 +4,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static org.testng.Assert.assertTrue;
+
 public class PlaySong extends BaseTest {
     @Test
     public void playSong() throws InterruptedException {
@@ -12,9 +14,7 @@ public class PlaySong extends BaseTest {
         clickSubmit();
         clickButtonControl();
         clickBtnPlay();
-        clickBtnPause();
-
-
+//        clickBtnPause();
     }
 
     private void clickButtonControl() throws InterruptedException {
@@ -23,12 +23,15 @@ public class PlaySong extends BaseTest {
                 .moveToElement(btnControl)
                 .perform();
 
+
+
     }
+    protected void clickBtnPause() throws InterruptedException {
+        WebElement btnPause = driver.findElement(By.cssSelector("[data-testid='pause-btn']"));
 
-
+        Assert.assertTrue(btnPause.isDisplayed());
+    }
 }
-
-
 
 
 

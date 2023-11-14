@@ -11,6 +11,8 @@ import org.testng.annotations.BeforeSuite;
 
 import java.time.Duration;
 
+import static org.testng.Assert.assertTrue;
+
 public class BaseTest {
     public static WebDriver driver = null; // Объявление статической переменной driver, представляющей веб-драйвер
 
@@ -94,13 +96,15 @@ public class BaseTest {
 
     }
 
-    protected void clickBtnPause() throws InterruptedException {
-        WebElement btnPause = driver.findElement(By.cssSelector("[data-testid='pause-btn']"));
-        Thread.sleep(5000);
-
+//    protected void clickBtnPause() throws InterruptedException {  //<== methodbtnPause
+//        WebElement btnPause = driver.findElement(By.cssSelector("[data-testid='pause-btn']"));
+//        Thread.sleep(5000);
+//
 //        Assert.assertTrue(btnPause.isDisplayed());
-    }
+//    }
 }
+
+
 
 
 
