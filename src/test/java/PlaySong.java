@@ -14,7 +14,7 @@ public class PlaySong extends BaseTest {
         clickSubmit();
         clickButtonControl();
         clickBtnPlay();
-//        clickBtnPause();
+        Assert.assertTrue(displaytSoundBar());
     }
 
     private void clickButtonControl() throws InterruptedException {
@@ -26,10 +26,18 @@ public class PlaySong extends BaseTest {
 
 
     }
-    protected void clickBtnPause() throws InterruptedException {
-        WebElement btnPause = driver.findElement(By.cssSelector("[data-testid='pause-btn']"));
+    private void clickBtnPlay() throws InterruptedException {
 
-        Assert.assertTrue(btnPause.isDisplayed());
+        WebElement btnPlay = driver.findElement(By.cssSelector("[data-testid='play-btn']"));
+        Thread.sleep(500);
+        btnPlay.click();
+
+    }
+
+    private boolean displaytSoundBar() throws InterruptedException {
+        WebElement soundBar = driver.findElement(By.cssSelector("[alt='Sound bars']"));
+Thread.sleep(500);
+        return soundBar.isDisplayed();
     }
 }
 

@@ -88,20 +88,7 @@ public class BaseTest {
 
     }
 
-    protected void clickBtnPlay() throws InterruptedException {
 
-        WebElement btnPlay = driver.findElement(By.cssSelector("[data-testid='play-btn']"));
-        Thread.sleep(5000);
-        btnPlay.click();
-
-    }
-
-//    protected void clickBtnPause() throws InterruptedException {  //<== methodbtnPause
-//        WebElement btnPause = driver.findElement(By.cssSelector("[data-testid='pause-btn']"));
-//        Thread.sleep(5000);
-//
-//        Assert.assertTrue(btnPause.isDisplayed());
-//    }
 }
 
 
