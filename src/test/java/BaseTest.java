@@ -4,12 +4,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 
 import java.time.Duration;
+
+import static org.testng.Assert.assertTrue;
 
 public class BaseTest {
     public static WebDriver driver = null; // Объявление статической переменной driver, представляющей веб-драйвер
@@ -52,7 +55,7 @@ public class BaseTest {
     }
 
     protected void clickNameSong() throws InterruptedException {
-        WebElement nameSong = driver.findElement(By.xpath("//section[@id='songsWrapper']//td[contains(text(),'Algorithms')]"));
+        WebElement nameSong = driver.findElement(By.xpath("//section[@id='songsWrapper']//td[contains(text(),'Ketsa')]"));
         nameSong.click();
         Thread.sleep(500);
     }
@@ -86,7 +89,11 @@ public class BaseTest {
         logEmail.sendKeys(email);
 
     }
+
+
 }
+
+
 
 
 
