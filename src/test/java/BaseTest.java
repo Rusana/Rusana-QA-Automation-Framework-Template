@@ -8,6 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
 
 import java.time.Duration;
 
@@ -18,13 +19,14 @@ public class BaseTest {
 
 //    public static String url = "https://qa.koel.app/"; //added
 
-    @BeforeSuite // Метод, выполняющийся перед всеми тестами в наборе тестов
+    @BeforeSuite// Метод, выполняющийся перед всеми тестами в наборе тестов
     public static void setupClass() {
         WebDriverManager.chromedriver().setup();  // Настройка ChromeDriver с использованием WebDriverManager
     }
 
     @BeforeMethod  // Метод, выполняющийся перед каждым тестовым методом
-    public static void setUpBrowser() {
+    @Parameters ({"BaseUrl"})   //parameterisation  started from TestNg.xml
+    public static void setUpBrowser(String BaseURL) {
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications", "--remote-allow-origins=*", "--incognito", "--start-maximized");
@@ -32,8 +34,8 @@ public class BaseTest {
 // Установка опции исключения для обхода автоматизации
         driver = new ChromeDriver(options); // Инициализация веб-драйвера Chrome с заданными опциями
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // Установка неявного ожидания (10 секунд)
-        String url = "https://qa.koel.app/"; // Задание URL-адреса, который будет открыт в браузере
-        driver.get(url); // Открытие указанной URL-страницы
+        //"https://qa.koel.app/"; // Задание URL-адреса, который будет открыт в браузере
+        driver.get(BaseURL); // Открытие указанной URL-страницы
     }
 
     @AfterMethod // Метод, выполняющийся после каждого тестового метода
