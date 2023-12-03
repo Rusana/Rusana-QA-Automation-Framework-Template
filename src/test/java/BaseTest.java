@@ -4,21 +4,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Parameters;
 
 import java.time.Duration;
 
-import static org.testng.Assert.assertTrue;
 
 public class BaseTest {
     public static WebDriver driver = null; // Объявление статической переменной driver, представляющей веб-драйвер
-public static WebDriverWait wait;
+    public static WebDriverWait wait = null; //For explicit  wait;
+    public static Actions actions = null;
 //    public static String url = "https://qa.koel.app/"; //added
+
+
 
     @BeforeSuite// Метод, выполняющийся перед всеми тестами в наборе тестов
     public static void setupClass() {
@@ -27,21 +28,19 @@ public static WebDriverWait wait;
     }
 
     @BeforeMethod  // Метод, выполняющийся перед каждым тестовым методом
-    @Parameters ({"BaseUrl"})   //parameterisation  started from TestNg.xml
-    public static void setUpBrowser(String BaseURL) {
+//    @Parameters ({"BaseUrl"})   //parameterisation  started from TestNg.xml
+    public static void setUpBrowser() {
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications", "--remote-allow-origins=*", "--incognito", "--start-maximized");
         options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
 // Установка опции исключения для обхода автоматизации
         driver = new ChromeDriver(options); // Инициализация веб-драйвера Chrome с заданными опциями
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // Установка неявного ожидания (10 секунд)
-
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // Установка неявного ожидания (10 секунд)
+        wait = new WebDriverWait(driver, Duration.ofSeconds(4)); // Method explicit wai
         String url = "https://qa.koel.app/"; // Задание URL-адреса, который будет открыт в браузере
         driver.get(url); // Открытие указанной URL-страницы
-        wait = new WebDriverWait(driver, Duration.ofSeconds(4)); // Method explicit wait
-        //"https://qa.koel.app/"; // Задание URL-адреса, который будет открыт в браузере
-        driver.get(BaseURL); // Открытие указанной URL-страницы
+//       driver.get("BaseUrl")  // Задание URL-адреса, который будет открыт в браузере used with @Parametr ...
 
     }
 
@@ -51,29 +50,7 @@ public static WebDriverWait wait;
         driver.quit(); // Завершение сеанса браузера и освобождение ресурсов
     }
 
-    protected void clickplaylist() throws InterruptedException {
-        WebElement playlist = driver.findElement(By.cssSelector("#songsWrapper .playlist"));
-        playlist.click();
-        Thread.sleep(500);
-    }
 
-    protected void clickbuttonAddSong() {
-        WebElement buttonAddSong = driver.findElement(By.xpath("//button[@class='btn-add-to']"));
-        buttonAddSong.click();
-    }
-
-    protected void clickNameSong() throws InterruptedException {
-        WebElement nameSong = driver.findElement(By.xpath("//section[@id='songsWrapper']//td[contains(text(),'Ketsa')]"));
-        nameSong.click();
-        Thread.sleep(500);
-    }
-
-    protected void clickButtonAllSong() throws InterruptedException {
-        WebElement buttonAllSong = driver.findElement(By.cssSelector("[class='songs']"));
-        buttonAllSong.click();
-        Thread.sleep(2000);
-
-    }
 
     protected void clickSubmit() throws InterruptedException {
         WebElement buttonLogIn = driver.findElement(By.cssSelector("[type='submit']"));
