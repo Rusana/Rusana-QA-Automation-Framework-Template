@@ -39,6 +39,7 @@ public class BaseTest {
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // Установка неявного ожидания (10 секунд)
         wait = new WebDriverWait(driver, Duration.ofSeconds(4)); // Method explicit wai
         String url = "https://qa.koel.app/"; // Задание URL-адреса, который будет открыт в браузере
+        actions = new Actions(driver);
         driver.get(url); // Открытие указанной URL-страницы
 //       driver.get("BaseUrl")  // Задание URL-адреса, который будет открыт в браузере used with @Parametr ...
 
@@ -52,10 +53,9 @@ public class BaseTest {
 
 
 
-    protected void clickSubmit() throws InterruptedException {
+    protected void clickSubmit() {
         WebElement buttonLogIn = driver.findElement(By.cssSelector("[type='submit']"));
         buttonLogIn.click();
-        Thread.sleep(2000);
 
     }
 
