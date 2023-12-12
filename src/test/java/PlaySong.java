@@ -3,40 +3,37 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.assertTrue;
+import pageObjects.LoginPage;
 
 public class PlaySong extends BaseTest {
     @Test
-    public void playSong() throws InterruptedException {
-        enterEmail("shikhabidovarusana@gmail.com");
-        enterPassword("te$t$tudent");
-        clickSubmit();
+    public void playSong() {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.enterEmail("shikhabidovarusana@gmail.com");
+        loginPage.enterPassword("te$t$tudent");
+        loginPage.clickSubmit();
         clickButtonControl();
         clickBtnPlay();
         Assert.assertTrue(displaytSoundBar());
     }
 
-    private void clickButtonControl() throws InterruptedException {
+    private void clickButtonControl() {
         WebElement btnControl = driver.findElement(By.cssSelector("[class='side player-controls']"));
         new Actions(driver)
                 .moveToElement(btnControl)
                 .perform();
 
-
-
     }
-    private void clickBtnPlay() throws InterruptedException {
+
+    private void clickBtnPlay() {
 
         WebElement btnPlay = driver.findElement(By.cssSelector("[data-testid='play-btn']"));
-        Thread.sleep(500);
         btnPlay.click();
 
     }
 
-    private boolean displaytSoundBar() throws InterruptedException {
+    private boolean displaytSoundBar() {
         WebElement soundBar = driver.findElement(By.cssSelector("[alt='Sound bars']"));
-Thread.sleep(500);
         return soundBar.isDisplayed();
     }
 }
