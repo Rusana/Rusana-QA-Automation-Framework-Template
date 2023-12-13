@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObjects.LoginPage;
 
+
 public class Homework20 extends BaseTest{
 
     @Test
@@ -14,6 +15,11 @@ public class Homework20 extends BaseTest{
         loginPage.enterPassword("te$t$tudent");
         loginPage.clickSubmit();
         Assert.assertTrue(displaitButton() );
+    public void displaitButtonTest () throws InterruptedException {
+        enterEmail("shikhabidovarusana@gmail.com");
+        enterPassword("te$t$tudent");
+        clickSubmit();
+        Assert.assertTrue(displaitButton());
 
     }
 private  boolean displaitButton (){

@@ -16,9 +16,33 @@ public class HomeWork17 extends BaseTest { // Объявление класса 
         loginPage.clickSubmit();
         clickButtonAllSong(); // Переход к разделу "Все песни"
         clickNameSong(); // Поиск и клик по имени песни (например, "Pluto")
-        clickbuttonAddSong();
-        clickplaylist();// Поиск и клик по элементу "Плейлист"
+        clickBtnAddSong();
+        clickPlayList();// Поиск и клик по элементу "Плейлист"
         Assert.assertTrue(getNotificationText().contains(expectedSongAddedMessage)); // Проверка фактичес (). contains(expectedSongAddedMessage));
+    }
+    public void clickPlayList() throws InterruptedException {
+        Thread.sleep(500);
+        WebElement playlist = driver.findElement(By.cssSelector("#songsWrapper .playlist"));
+        playlist.click();
+
+    }
+
+    public void clickBtnAddSong() {
+        WebElement buttonAddSong = driver.findElement(By.xpath("//button[@class='btn-add-to']"));
+        buttonAddSong.click();
+    }
+
+    public void clickNameSong() throws InterruptedException {
+        WebElement nameSong = driver.findElement(By.xpath("//section[@id='songsWrapper']//td[contains(text(),'Ketsa')]"));
+        nameSong.click();
+        Thread.sleep(500);
+    }
+
+    public void clickButtonAllSong() throws InterruptedException {
+        WebElement buttonAllSong = driver.findElement(By.cssSelector("[class='songs']"));
+        buttonAllSong.click();
+        Thread.sleep(2000);
+
     }
 
     public String getNotificationText() { // Метод для получения текстового сообщения об успешном добавлении песни в плейлист
