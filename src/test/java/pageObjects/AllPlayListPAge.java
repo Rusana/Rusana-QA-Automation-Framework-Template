@@ -5,9 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class AllPlayListPAge extends BasePage {
+
     By btnPLayListTestPro = By.xpath("//li[@class='playlist playlist']//a");
     By btnDeletePlaylist = By.cssSelector("[class='del btn-delete-playlist']");
-    By btnAlertify = By.cssSelector("[class='success show']");
+//    By btnAlertify = By.cssSelector("[class='success show']");
 
     public AllPlayListPAge(WebDriver driver) {
         super(driver);
@@ -26,9 +27,9 @@ public class AllPlayListPAge extends BasePage {
         containPlayList.click();
     }
 
-    public boolean clickBtnAlertify() {
-        WebElement btnAlertDel = driver.findElement(btnAlertify);
-        return btnAlertDel.isDisplayed();
-    }
+//    public boolean clickBtnAlertify() {
+//        WebElement btnAlertDel = driver.findElement(btnAlertify);
+//        return btnAlertDel.isDisplayed();
+//    }
 }
 

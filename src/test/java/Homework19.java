@@ -16,7 +16,7 @@ public class Homework19 extends BaseTest {
         loginPage.clickSubmit();
         allPlayListPAge.clickBtnPlayListTestPro() ;
         allPlayListPAge.clickBtnDelPlayList();
-        Assert.assertFalse(clickBtnAlertify());
+        Assert.assertTrue(clickBtnAlertify());
 
 
 
@@ -32,9 +32,9 @@ public class Homework19 extends BaseTest {
 //        WebElement  containPlayList=driver.findElement(By.cssSelector("[class='del btn-delete-playlist']"));
 //        containPlayList.click();
 //    }
-//
-//    private boolean clickBtnAlertify()  {
-//        WebElement btnAlertDel = driver.findElement(By.cssSelector("[class='success show']"));
+
+    private boolean clickBtnAlertify()  {
+        WebElement btnAlertDel = driver.findElement(By.cssSelector("[class='success show']"));
         return btnAlertDel.isDisplayed();
-//    }
+    }
 }
