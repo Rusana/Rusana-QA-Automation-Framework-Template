@@ -4,14 +4,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pageObjects.LoginPage;
 
 public class HomeWork21 extends BaseTest {
     String playListName = "pr";
     @Test
     public void renamePlaylist()  {
-        enterEmail("shikhabidovarusana@gmail.com");
-        enterPassword("te$t$tudent");
-        clickSubmit();
+        LoginPage loginPage= new LoginPage(driver);
+        loginPage.enterEmail("shikhabidovarusana@gmail.com");
+        loginPage.enterPassword("te$t$tudent");
+        loginPage.clickSubmit();
         clickBtnPlayList();
         clearTextPlaylist();
         inputNewName();

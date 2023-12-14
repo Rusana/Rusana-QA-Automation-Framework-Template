@@ -11,6 +11,7 @@ public class HomeWork16 extends BaseTest{
         loginPage.clickBtnRegistration();
         String registUrl ="https://qa.koel.app/registration";
 
+
         Assert.assertEquals(driver.getCurrentUrl(), registUrl);
 
     }

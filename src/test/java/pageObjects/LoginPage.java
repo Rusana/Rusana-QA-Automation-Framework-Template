@@ -10,6 +10,7 @@ By btnLogin =By.cssSelector("[type='submit']");
 By fieldPassword =By.cssSelector("[type='password']");
 By fieldEmail =By.xpath("//input[@type='email']");
     public LoginPage(WebDriver driver) {
+
         super(driver);
     }
     public void clickBtnRegistration(){

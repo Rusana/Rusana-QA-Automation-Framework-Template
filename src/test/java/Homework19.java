@@ -18,20 +18,8 @@ public class Homework19 extends BaseTest {
         allPlayListPAge.clickBtnDelPlayList();
         Assert.assertTrue(clickBtnAlertify());
 
-
-
         }
-//
-//        private void clickBtnPlayListTestPro () {
-//            WebElement btnPlaylist = driver.findElement(By.xpath("//li[@class=\"playlist playlist\"]//a"));
-//            btnPlaylist.click();
-//
-//        }
-//
-//    private void clickBtnDelPlayList() {
-//        WebElement  containPlayList=driver.findElement(By.cssSelector("[class='del btn-delete-playlist']"));
-//        containPlayList.click();
-//    }
+
 
     private boolean clickBtnAlertify()  {
         WebElement btnAlertDel = driver.findElement(By.cssSelector("[class='success show']"));

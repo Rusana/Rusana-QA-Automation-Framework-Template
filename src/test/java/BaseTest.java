@@ -9,12 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-
 import java.time.Duration;
-
-public class BaseTest {
-    public static WebDriver driver ; // Объявление статической переменной driver, представляющей веб-драйвер
-public static WebDriverWait wait;
 
 public class BaseTest {
     public static WebDriver driver = null; // Объявление статической переменной driver, представляющей веб-драйвер
@@ -62,29 +57,7 @@ public class BaseTest {
         Thread.sleep(2000);
 
     }
-//
-//    protected void clickSubmit() throws InterruptedException {
-//        WebElement buttonLogIn = driver.findElement(By.cssSelector("[type='submit']"));
-//        buttonLogIn.click();
-//        Thread.sleep(2000);
-//
-//    }
-//
-//    protected void enterPassword(String password) {
-//        WebElement logPassword = driver.findElement(By.cssSelector("[type='password']"));
-//        logPassword.click();
-//        logPassword.clear();
-//        logPassword.sendKeys(password);
-//
-//    }
-//
-//    protected void enterEmail(String email) {
-//        WebElement logEmail = driver.findElement(By.xpath("//input[@type='email']"));
-//        logEmail.click();
-//        logEmail.clear();
-//        logEmail.sendKeys(email);
-//
-//    }
+
 
 
     protected void clickSubmit() {

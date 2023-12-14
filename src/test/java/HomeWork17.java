@@ -20,8 +20,7 @@ public class HomeWork17 extends BaseTest { // Объявление класса 
         clickPlayList();// Поиск и клик по элементу "Плейлист"
         Assert.assertTrue(getNotificationText().contains(expectedSongAddedMessage)); // Проверка фактичес (). contains(expectedSongAddedMessage));
     }
-    public void clickPlayList() throws InterruptedException {
-        Thread.sleep(500);
+    public void clickPlayList()  {
         WebElement playlist = driver.findElement(By.cssSelector("#songsWrapper .playlist"));
         playlist.click();
 
@@ -32,16 +31,14 @@ public class HomeWork17 extends BaseTest { // Объявление класса 
         buttonAddSong.click();
     }
 
-    public void clickNameSong() throws InterruptedException {
+    public void clickNameSong() {
         WebElement nameSong = driver.findElement(By.xpath("//section[@id='songsWrapper']//td[contains(text(),'Ketsa')]"));
         nameSong.click();
-        Thread.sleep(500);
     }
 
-    public void clickButtonAllSong() throws InterruptedException {
+    public void clickButtonAllSong() {
         WebElement buttonAllSong = driver.findElement(By.cssSelector("[class='songs']"));
         buttonAllSong.click();
-        Thread.sleep(2000);
 
     }
 
