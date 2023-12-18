@@ -28,7 +28,6 @@ public class BaseTest {
     @BeforeMethod  // Метод, выполняющийся перед каждым тестовым методом
 //    @Parameters ({"BaseUrl"})   //parameterisation  started from TestNg.xml
     public static void setUpBrowser() {
-
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications", "--remote-allow-origins=*", "--incognito", "--start-maximized");
         options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
@@ -51,37 +50,36 @@ public class BaseTest {
 
 
 
-    protected void clickButtonAllSong() throws InterruptedException {
+    protected void clickButtonAllSong() {
         WebElement buttonAllSong = driver.findElement(By.cssSelector("[class='songs']"));
         buttonAllSong.click();
-        Thread.sleep(2000);
 
     }
 
 
-
-    protected void clickSubmit() {
-        WebElement buttonLogIn = driver.findElement(By.cssSelector("[type='submit']"));
-        buttonLogIn.click();
-
-    }
-
-    protected void enterPassword(String password) {
-        WebElement logPassword = driver.findElement(By.cssSelector("[type='password']"));
-        logPassword.click();
-        logPassword.clear();
-        logPassword.sendKeys(password);
-
-    }
-
-    protected void enterEmail(String email) {
-        WebElement logEmail = driver.findElement(By.xpath("//input[@type='email']"));
-        logEmail.click();
-        logEmail.clear();
-        logEmail.sendKeys(email);
-
-    }
-
+//
+//    protected void clickSubmit() {
+//        WebElement buttonLogIn = driver.findElement(By.cssSelector("[type='submit']"));
+//        buttonLogIn.click();
+//
+//    }
+//
+//    protected void enterPassword(String password) {
+//        WebElement logPassword = driver.findElement(By.cssSelector("[type='password']"));
+//        logPassword.click();
+//        logPassword.clear();
+//        logPassword.sendKeys(password);
+//
+//    }
+//
+//    protected void enterEmail(String email) {
+//        WebElement logEmail = driver.findElement(By.xpath("//input[@type='email']"));
+//        logEmail.click();
+//        logEmail.clear();
+//        logEmail.sendKeys(email);
+//
+//    }
+//
 
 }
 

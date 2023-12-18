@@ -3,7 +3,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pageObjects.AllPlayListPAge;
 import pageObjects.LoginPage;
 
 
@@ -12,7 +11,7 @@ public class Homework20 extends BaseTest{
     @Test
     public void displaitButtonTest () {
         LoginPage loginPage = new LoginPage(driver);
-        AllPlayListPAge allPlayListPAge =new AllPlayListPAge(driver);
+//        AllPlayListPAge allPlayListPAge =new AllPlayListPAge(driver);
         loginPage.enterEmail("shikhabidovarusana@gmail.com");
         loginPage.enterPassword("te$t$tudent");
         loginPage.clickSubmit();
