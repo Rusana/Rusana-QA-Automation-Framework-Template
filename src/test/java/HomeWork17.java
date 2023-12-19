@@ -8,7 +8,7 @@ public class HomeWork17 extends BaseTest { // Объявление класса 
     String expectedSongAddedMessage = "Added 1 song into";  // Ожидаемое сообщение об успешном добавлении песни в плейлист
 
     @Test // Обозначение метода как тестового метода с использованием аннотации @Test
-    public void addSongToPlaylist() throws InterruptedException {
+    public void addSongToPlaylist() {
         // Поиск и взаимодействие с элементами веб-страницы
         LoginPage loginPage = new LoginPage(driver);
         AllSongs allSongs = new AllSongs(driver);

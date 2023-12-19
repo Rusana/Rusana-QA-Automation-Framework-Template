@@ -4,21 +4,24 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LoginPage extends BasePage{
-By registration=By.cssSelector("[href='registration']");
-By btnLogin =By.cssSelector("[type='submit']");
-By fieldPassword =By.cssSelector("[type='password']");
-By fieldEmail =By.xpath("//input[@type='email']");
+public class LoginPage extends BasePage {
+    By registration = By.cssSelector("[href='registration']");
+    By btnLogin = By.cssSelector("[type='submit']");
+    By fieldPassword = By.cssSelector("[type='password']");
+    By fieldEmail = By.xpath("//input[@type='email']");
+
     public LoginPage(WebDriver driver) {
 
         super(driver);
     }
-    public void clickBtnRegistration(){
+
+    public void clickBtnRegistration() {
         WebElement btnRegistration = driver.findElement(registration);
         btnRegistration.click();
 
     }
-  public void clickSubmit() {
+
+    public void clickSubmit() {
         WebElement btnLogIn = driver.findElement(btnLogin);
         btnLogIn.click();
 

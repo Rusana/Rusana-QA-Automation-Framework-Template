@@ -7,6 +7,7 @@ public class Homework19 extends BaseTest {
 
     @Test
     public void deletePlaylist() {
+
         LoginPage loginPage = new LoginPage(driver);
         AllPlayListPAge allPlayListPAge = new AllPlayListPAge(driver);
 
@@ -19,5 +20,4 @@ public class Homework19 extends BaseTest {
         Assert.assertTrue(allPlayListPAge.isDispalayAlertify());
 
         }
-
 }

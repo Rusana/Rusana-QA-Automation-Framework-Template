@@ -8,7 +8,9 @@ import pageObjects.LoginPage;
 public class PlaySong extends BaseTest {
     @Test
     public void playSong() {
+
         LoginPage loginPage = new LoginPage(driver);
+
         loginPage.enterEmail("shikhabidovarusana@gmail.com");
         loginPage.enterPassword("te$t$tudent");
         loginPage.clickSubmit();
@@ -17,7 +19,7 @@ public class PlaySong extends BaseTest {
         Assert.assertTrue(displaytSoundBar());
     }
 
-    private void clickButtonControl() {
+    public void clickButtonControl() {
         WebElement btnControl = driver.findElement(By.cssSelector("[class='side player-controls']"));
         new Actions(driver)
                 .moveToElement(btnControl)
@@ -25,14 +27,14 @@ public class PlaySong extends BaseTest {
 
     }
 
-    private void clickBtnPlay() {
+    public void clickBtnPlay() {
 
         WebElement btnPlay = driver.findElement(By.cssSelector("[data-testid='play-btn']"));
         btnPlay.click();
 
     }
 
-    private boolean displaytSoundBar() {
+    public boolean displaytSoundBar() {
         WebElement soundBar = driver.findElement(By.cssSelector("[alt='Sound bars']"));
         return soundBar.isDisplayed();
     }
