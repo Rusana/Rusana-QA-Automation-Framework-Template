@@ -1,47 +1,23 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pageObjects.AllPlayListPAge;
+import pageObjects.LoginPage;
 
 public class Homework19 extends BaseTest {
 
     @Test
-    public void deletePlaylist() throws InterruptedException {
-        enterEmail("shikhabidovarusana@gmail.com");
-        enterPassword("te$t$tudent");
-        clickSubmit();
-        clickBtnPlayListTestPro() ;
-        clickBtnDelPlayList();
-        Assert.assertTrue(clickBtnAlertify());
+    public void deletePlaylist() {
 
+        LoginPage loginPage = new LoginPage(driver);
+        AllPlayListPAge allPlayListPAge = new AllPlayListPAge(driver);
 
+        loginPage.enterEmail("shikhabidovarusana@gmail.com");
+        loginPage.enterPassword("te$t$tudent");
+        loginPage.clickSubmit();
+        allPlayListPAge.clickBtnPlayListTestPro() ;
+        allPlayListPAge.clickBtnDelPlayList();
 
-        }
-
-        private void clickBtnPlayListTestPro () throws InterruptedException {
-            WebElement btnPlaylist = driver.findElement(By.xpath("//li[@class=\"playlist playlist\"]//a"));
-            Thread.sleep(5000);
-            btnPlaylist.click();
-
+        Assert.assertTrue(allPlayListPAge.isDispalayAlertify());
 
         }
-
-
-
-    private void clickBtnDelPlayList() throws InterruptedException {
-        WebElement  containPlayList=driver.findElement(By.cssSelector("[class='del btn-delete-playlist']"));
-        Thread.sleep(500);
-        containPlayList.click();
-    }
-
-    private boolean clickBtnAlertify() throws InterruptedException {
-        WebElement btnAlertDel = driver.findElement(By.cssSelector("[class='success show']"));
-        Thread.sleep(500);
-        return btnAlertDel.isDisplayed();
-    }
-
-
-
-
-
 }
