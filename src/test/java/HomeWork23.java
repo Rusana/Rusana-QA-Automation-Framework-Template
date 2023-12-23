@@ -17,8 +17,10 @@ public class HomeWork23 extends BaseTest {
         loginPage.enterPassword("te$t$tudent");
         loginPage.clickSubmit();
         Thread.sleep(500);
+
         Assert.assertTrue(artistsPage.artists());
 
 
     }
+    
 }
