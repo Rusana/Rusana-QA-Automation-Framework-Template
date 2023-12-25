@@ -8,7 +8,7 @@
         <classes>
             <class name="PlaySong">
                 <methods>
-                    <include name="playSong" />
+                    <include name="HomeWork16" />
 
                 </methods>
             </class>

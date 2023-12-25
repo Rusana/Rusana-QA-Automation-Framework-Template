@@ -23,6 +23,9 @@ public class HomeWork17 extends BaseTest { // Объявление класса 
         allPlayListPAge.clickPlayList();// Поиск и клик по элементу "Плейлист"
 
         Assert.assertTrue(allSongs.getNotificationText().contains(expectedSongAddedMessage)); // Проверка фактичес (). contains(expectedSongAddedMessage));
+
+
+
     }
 
 }
