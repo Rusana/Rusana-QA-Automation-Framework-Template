@@ -34,7 +34,7 @@ public class BaseTest {
 // Установка опции исключения для обхода автоматизации
         driver = new ChromeDriver(options); // Инициализация веб-драйвера Chrome с заданными опциями
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // Установка неявного ожидания (10 секунд)
-        wait = new WebDriverWait(driver, Duration.ofSeconds(4)); // Method explicit wai
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Method explicit wai
         String url = "https://qa.koel.app/"; // Задание URL-адреса, который будет открыт в браузере
         actions = new Actions(driver);
         driver.get(url); // Открытие указанной URL-страницы
