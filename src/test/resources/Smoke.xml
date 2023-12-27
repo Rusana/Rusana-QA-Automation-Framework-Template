@@ -6,9 +6,9 @@
     <test name="Example Test" preserve-order="false">
 
         <classes>
-            <class name="PlaySong">
+            <class name="HomeWork16">
                 <methods>
-                    <include name="HomeWork16" />
+                    <include name="registrationTest" />
 
                 </methods>
             </class>
