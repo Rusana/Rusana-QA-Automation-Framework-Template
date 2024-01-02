@@ -3,11 +3,13 @@ import org.testng.annotations.Test;
 import pageObjects.AllSongs;
 import pageObjects.LoginPage;
 
+import java.net.MalformedURLException;
+
 public class HomeWork18 extends BaseTest {
 
 
     @Test
-    public void playSong() {
+    public void playSong() throws MalformedURLException {
 
         LoginPage loginPage = new LoginPage(driver);
         AllSongs allSongs = new AllSongs(driver);

@@ -3,10 +3,12 @@ import org.testng.annotations.Test;
 import pageObjects.AllPlayListPAge;
 import pageObjects.LoginPage;
 
+import java.net.MalformedURLException;
+
 public class Homework19 extends BaseTest {
 
     @Test
-    public void deletePlaylist() {
+    public void deletePlaylist() throws MalformedURLException {
 
         LoginPage loginPage = new LoginPage(driver);
         AllPlayListPAge allPlayListPAge = new AllPlayListPAge(driver);

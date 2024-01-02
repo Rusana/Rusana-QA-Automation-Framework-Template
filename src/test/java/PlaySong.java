@@ -5,9 +5,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObjects.LoginPage;
 
+import java.net.MalformedURLException;
+
 public class PlaySong extends BaseTest {
     @Test
-    public void playSong() {
+    public void playSong() throws MalformedURLException {
 
         LoginPage loginPage = new LoginPage(driver);
 

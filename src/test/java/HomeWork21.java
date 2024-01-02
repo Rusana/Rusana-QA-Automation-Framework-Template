@@ -3,10 +3,12 @@ import org.testng.annotations.Test;
 import pageObjects.AllPlayListPAge;
 import pageObjects.LoginPage;
 
+import java.net.MalformedURLException;
+
 public class HomeWork21 extends BaseTest {
 
     @Test
-    public void renamePlaylist() {
+    public void renamePlaylist() throws MalformedURLException {
 
         LoginPage loginPage = new LoginPage(driver);
         AllPlayListPAge allPlayListPAge = new AllPlayListPAge(driver);

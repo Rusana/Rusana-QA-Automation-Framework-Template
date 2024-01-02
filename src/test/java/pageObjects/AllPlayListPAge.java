@@ -24,7 +24,7 @@ public class AllPlayListPAge extends BasePage {
     By fieldIsDisplayedNewName = By.cssSelector("[class='success show']");
 
 
-    public AllPlayListPAge(WebDriver driver) {
+    public AllPlayListPAge(WebDriver driver)  {
         super(driver);
 
     }
