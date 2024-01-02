@@ -10,16 +10,16 @@ import java.time.Duration;
 
 public class BasePage {
 
-   protected WebDriver driver;
-   protected WebDriverWait wait;
-   protected Actions actions;
+
 
     public BasePage(WebDriver driver) {
+
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         actions = new Actions(driver);
-        PageFactory.initElements(driver, this);
 
     }
 
-}
+
+
+

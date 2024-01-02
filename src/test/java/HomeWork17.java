@@ -4,11 +4,13 @@ import pageObjects.AllPlayListPAge;
 import pageObjects.AllSongs;
 import pageObjects.LoginPage;
 
+import java.net.MalformedURLException;
+
 public class HomeWork17 extends BaseTest { // Объявление класса HomeWork17, который наследует функциональность класса BaseTest
     String expectedSongAddedMessage = "Added 1 song into";  // Ожидаемое сообщение об успешном добавлении песни в плейлист
 
     @Test // Обозначение метода как тестового метода с использованием аннотации @Test
-    public void addSongToPlaylist() {
+    public void addSongToPlaylist() throws MalformedURLException {
         // Поиск и взаимодействие с элементами веб-страницы
         LoginPage loginPage = new LoginPage(driver);
         AllSongs allSongs = new AllSongs(driver);
@@ -23,6 +25,9 @@ public class HomeWork17 extends BaseTest { // Объявление класса 
         allPlayListPAge.clickPlayList();// Поиск и клик по элементу "Плейлист"
 
         Assert.assertTrue(allSongs.getNotificationText().contains(expectedSongAddedMessage)); // Проверка фактичес (). contains(expectedSongAddedMessage));
+
+
+
     }
 
 }

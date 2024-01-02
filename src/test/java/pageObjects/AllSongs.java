@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.net.MalformedURLException;
+
 public class AllSongs extends BasePage {
 
     By btnAddSong = By.xpath("//button[@class='btn-add-to']");
@@ -21,7 +23,7 @@ public class AllSongs extends BasePage {
     By windowDisplaySoundBar = By.cssSelector("[alt='Sound bars']");
 
 
-    public AllSongs(WebDriver driver) {
+    public AllSongs(WebDriver driver) throws MalformedURLException {
         super(driver);
 
     }

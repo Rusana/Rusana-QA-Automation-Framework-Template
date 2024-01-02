@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.net.MalformedURLException;
+
 public class AllButtonPLay extends BasePage {
 
     //HomeWork18
@@ -12,7 +14,7 @@ public class AllButtonPLay extends BasePage {
 
     //HomeWork18
 
-    public AllButtonPLay(WebDriver driver) {
+    public AllButtonPLay(WebDriver driver) throws MalformedURLException {
         super(driver);
 
     }

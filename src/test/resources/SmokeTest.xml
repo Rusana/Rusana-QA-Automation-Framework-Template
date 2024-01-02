@@ -2,18 +2,18 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="SmokeTest.xml">
-    <parameter name="BaseUrl" value="https://qa.koel.app/"/>
-    <test name="Example Test" preserve-order="false">
+    <parameter name="BaseUrl" value="https://qa.koel.app/"></suite>
+    <name="Example Test" preserve-order="false">
+        <parameter name= "browser" value= "https://ga.koel.app/"></parameter> <!-- Set the BaseURL parameter
+<!--<test name="Example Test" preserve-order="false"> &lt;!&ndash; Define the TestNG test &ndash;&gt;-->
+            <parameter name="browser" value="firefox"></parametr> <!-- Set the browser parameterv
 
         <classes>
+                        <methods>
 
 <!--            <class name="Homework19"/>-->
 <!--            <class name="HomeWork21"/>-->
-<!--            <class name="HomeWork16"/>-->
-<!--            <class name="HomeWork17"/>-->
-<!--            <class name="HomeWork18"/>-->
-<!--            <class name="Homework20"/>-->
-                        <class name="Homework23"/>
+
 
         </classes>
 
