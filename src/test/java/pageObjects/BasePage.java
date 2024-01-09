@@ -21,10 +21,11 @@ public class BasePage {
 
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        actions = new Actions(driver);
+       actions = new Actions(driver);
 
     }
 }
+
 
 
 
