@@ -18,26 +18,33 @@ import java.time.Duration;
 
 public class BaseTest {
 
-    public static WebDriver driver = null; // Объявление статической переменной driver, представляющей веб-драйвер
+    static WebDriver driver;
+    static ThreadLocal<WebDriver> threadDriver;
+
+    public static WebDriver getDriver() {
+        return threadDriver.get();
+    }
+
+//    public static WebDriver driver = null; // Объявление статической переменной driver, представляющей веб-драйвер
+
+    @AfterMethod // Метод, выполняющийся после каждого тестового метода
+    public static void tearDown() {
+        threadDriver.get().quit(); // Завершение сеанса браузера и освобождение ресурсов
+
+    }
 
     @BeforeMethod
     @Parameters({"BaseURL"})
     public void launchBrowser(String BaseURL) throws MalformedURLException {
-
-        driver = pickBrowser(System.getProperty("browser"));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
-        driver.get(BaseURL);
+        threadDriver = new ThreadLocal<>();
+        threadDriver.set(driver);
+        threadDriver.set(pickBrowser(System.getProperty("browser")));
+        threadDriver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        threadDriver.get().manage().window().maximize();
+        threadDriver.get().get(BaseURL);
 
 
     }
-
-
-    @AfterMethod // Метод, выполняющийся после каждого тестового метода
-    public static void tearDown() {
-        driver.quit(); // Завершение сеанса браузера и освобождение ресурсов
-    }
-
 
     public WebDriver pickBrowser(String browser) throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities(); // Create a new DesiredCapabilities object

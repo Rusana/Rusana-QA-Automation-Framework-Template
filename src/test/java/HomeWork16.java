@@ -8,12 +8,12 @@ public class HomeWork16 extends BaseTest{
     @Test
     public void registrationTest() throws MalformedURLException {
 
-        LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage(threadDriver.get());
         loginPage.clickBtnRegistration();
 
         String registUrl ="https://qa.koel.app/registration";
 
-        Assert.assertEquals(driver.getCurrentUrl(), registUrl);
+        Assert.assertEquals(threadDriver.get().getCurrentUrl(), registUrl);
 
     }
 }
