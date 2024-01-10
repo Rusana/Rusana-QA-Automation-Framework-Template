@@ -11,9 +11,9 @@ public class HomeWork23 extends BaseTest {
 
     public void PageFactory() throws InterruptedException, MalformedURLException {
 
-        LoginPage loginPage = new LoginPage(threadDriver.get());
-        ArtistsPage artistsPage = new ArtistsPage(threadDriver.get());
-        PageFactory.initElements(threadDriver.get(), this);
+        LoginPage loginPage = new LoginPage(getThreadLocal());
+        ArtistsPage artistsPage = new ArtistsPage(getThreadLocal());
+        PageFactory.initElements(getThreadLocal(), this);
 
         loginPage.enterEmail("shikhabidovarusana@gmail.com");
         loginPage.enterPassword("te$t$tudent");

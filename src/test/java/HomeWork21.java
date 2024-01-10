@@ -10,8 +10,8 @@ public class HomeWork21 extends BaseTest {
     @Test
     public void renamePlaylist() throws MalformedURLException {
 
-        LoginPage loginPage = new LoginPage(threadDriver.get());
-        AllPlayListPAge allPlayListPAge = new AllPlayListPAge(threadDriver.get());
+        LoginPage loginPage = new LoginPage(getThreadLocal());
+        AllPlayListPAge allPlayListPAge = new AllPlayListPAge(getThreadLocal());
 
         loginPage.enterEmail("shikhabidovarusana@gmail.com");
         loginPage.enterPassword("te$t$tudent");

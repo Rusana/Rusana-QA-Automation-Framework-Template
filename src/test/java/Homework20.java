@@ -11,8 +11,8 @@ public class Homework20 extends BaseTest{
     @Test
     public void displaitButtonTest () throws MalformedURLException {
 
-        LoginPage loginPage = new LoginPage(threadDriver.get());
-        AllButtonPLay allButtonPLay =new AllButtonPLay(threadDriver.get());
+        LoginPage loginPage = new LoginPage(getThreadLocal());
+        AllButtonPLay allButtonPLay =new AllButtonPLay(getThreadLocal());
 
 
         loginPage.enterEmail("shikhabidovarusana@gmail.com");

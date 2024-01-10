@@ -10,8 +10,8 @@ public class Homework19 extends BaseTest {
     @Test
     public void deletePlaylist() throws MalformedURLException {
 
-        LoginPage loginPage = new LoginPage(threadDriver.get());
-        AllPlayListPAge allPlayListPAge = new AllPlayListPAge(threadDriver.get());
+        LoginPage loginPage = new LoginPage(getThreadLocal());
+        AllPlayListPAge allPlayListPAge = new AllPlayListPAge(getThreadLocal());
 
         loginPage.enterEmail("shikhabidovarusana@gmail.com");
         loginPage.enterPassword("te$t$tudent");

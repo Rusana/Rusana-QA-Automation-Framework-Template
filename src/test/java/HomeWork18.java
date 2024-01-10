@@ -11,8 +11,8 @@ public class HomeWork18 extends BaseTest {
     @Test
     public void playSong() throws MalformedURLException {
 
-        LoginPage loginPage = new LoginPage(threadDriver.get());
-        AllSongs allSongs = new AllSongs(threadDriver.get());
+        LoginPage loginPage = new LoginPage(getThreadLocal());
+        AllSongs allSongs = new AllSongs(getThreadLocal());
 
         loginPage.enterEmail("shikhabidovarusana@gmail.com");
         loginPage.enterPassword("te$t$tudent");

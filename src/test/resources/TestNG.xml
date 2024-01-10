@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="TestNG" parallel="methods" thread-count ="2">
-<!--    <parameter name="BaseURL" value="https://qa.koel.app/"/>-->
+<suite name="TestNG" parallel="methods" thread-count ="4">
     <test name="KoelTest" preserve-order="false">
+        <parameter name="BaseURL" value="https://qa.koel.app/"/>
+
         <classes>
 <!--            <class name="BaseTest"/>-->
             <class name="HomeWork16"/>
+            <class name="HomeWork18"/>
+
 
         </classes>
     </test>
