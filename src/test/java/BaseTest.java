@@ -15,6 +15,7 @@ import org.testng.annotations.Parameters;
 
 import java.net.MalformedURLException;
 import java.net.URI;
+import java.net.URL;
 import java.time.Duration;
 
 public class BaseTest {
@@ -41,19 +42,22 @@ public class BaseTest {
 
 
     public WebDriver lambdaTest() throws MalformedURLException {
-        String username = "";
-        String authkey = "";
+        String username = "shikhabidovarusana";
+        String authkey = "qO0H5R2YUaxl4t5J0UrLpkk4cnNfHeKZNyZI4IHMZb7z6JzDkK";
         String hub = "@hub.lambdatest.com/wd/hub";
-        DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("platform", "Windows 10");
-        caps.setCapability("browserName", "Chrome");
-        caps.setCapability("version", "110.0");
-        caps.setCapability("resolution", "1024x768");
-        caps.setCapability("build", "TestNG With Java");
-        caps.setCapability("name", this.getClass().getName());
-        caps.setCapability("plugin", "git-testng");
-        return new RemoteWebDriver(new URL("https://" + username + ":" + authkey + hub), caps);
-    }
+    FirefoxOptions browserOptions = new FirefoxOptions();
+        browserOptions.setCapability("platform", "Windows 10");
+        browserOptions.setCapability("browserName", "Chrome");
+        browserOptions.setCapability("version", "122.0");
+        browserOptions.setCapability("resolution", "1024x768");
+        browserOptions.setCapability("build", "Koel Automatioon");
+        browserOptions.setCapability("name", this.getClass().getName());
+        browserOptions.setCapability("plugin", "java-testNG");
+        return new RemoteWebDriver(new URL("https://" + username + ":" + authkey + hub), browserOptions);
+
+}
+
+
     public WebDriver pickBrowser(String browser) throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities(); // Create a new DesiredCapabilities object
         String gridURL = "http://192.168.0.161:4444"; // Set the URL for the Selenium Grid
@@ -82,7 +86,8 @@ public class BaseTest {
             case "grid-chrome":
                 caps.setCapability("browserName", "chrome"); // Set the browser capability to Chrome
                 return new RemoteWebDriver(URI.create(gridURL).toURL(), caps); // Launch a remote WebDriver instance with the specified capabilities
-
+            case  "cloud":
+                return lambdaTest(); 
             default:
                 WebDriverManager.chromedriver().setup(); // Set up the ChromeDriver executable using WebDriverManager
                 ChromeOptions options = new ChromeOptions(); // Create a new ChromeOptions object
