@@ -55,6 +55,18 @@ public class BaseTest {
         browserOptions.setCapability("plugin", "java-testNG");
         return new RemoteWebDriver(new URL("https://" + username + ":" + authkey + hub), browserOptions);
 
+//        FirefoxOptions browserOptions = new FirefoxOp
+//        tions();
+//        browserOptions.setPlatformName("Windows 10");
+//        browserOptions.setBrowserVersion("122.0");
+//        HashMap<String, Object> ltOptions = new HashMap<String, Object>();
+//        ltOptions.put("username", "shikhabidovarusana");
+//        ltOptions.put("accessKey", "qO0H5R2YUaxl4t5J0UrLpkk4cnNfHeKZNyZI4IHMZb7z6JzDkK");
+//        ltOptions.put("project", "Untitled");
+//        ltOptions.put("w3c", true);
+//        ltOptions.put("plugin", "java-testNG");
+//        browserOptions.setCapability("LT:Options", ltOptions);
+
 }
 
 
@@ -87,7 +99,7 @@ public class BaseTest {
                 caps.setCapability("browserName", "chrome"); // Set the browser capability to Chrome
                 return new RemoteWebDriver(URI.create(gridURL).toURL(), caps); // Launch a remote WebDriver instance with the specified capabilities
             case  "cloud":
-                return lambdaTest(); 
+                return lambdaTest();
             default:
                 WebDriverManager.chromedriver().setup(); // Set up the ChromeDriver executable using WebDriverManager
                 ChromeOptions options = new ChromeOptions(); // Create a new ChromeOptions object
