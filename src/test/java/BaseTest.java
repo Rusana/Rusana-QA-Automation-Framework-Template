@@ -39,35 +39,20 @@ public class BaseTest {
                 "Browser setup by Thread " + Thread.currentThread().getId() + " and Driver reference is : " + getThreadLocal());
 
     }
-
-
     public WebDriver lambdaTest() throws MalformedURLException {
         String username = "shikhabidovarusana";
         String authkey = "qO0H5R2YUaxl4t5J0UrLpkk4cnNfHeKZNyZI4IHMZb7z6JzDkK";
         String hub = "@hub.lambdatest.com/wd/hub";
-    FirefoxOptions browserOptions = new FirefoxOptions();
-        browserOptions.setCapability("platform", "Windows 10");
-        browserOptions.setCapability("browserName", "Chrome");
-        browserOptions.setCapability("version", "122.0");
-        browserOptions.setCapability("resolution", "1024x768");
-        browserOptions.setCapability("build", "Koel Automatioon");
-        browserOptions.setCapability("name", this.getClass().getName());
-        browserOptions.setCapability("plugin", "java-testNG");
-        return new RemoteWebDriver(new URL("https://" + username + ":" + authkey + hub), browserOptions);
-
-//        FirefoxOptions browserOptions = new FirefoxOp
-//        tions();
-//        browserOptions.setPlatformName("Windows 10");
-//        browserOptions.setBrowserVersion("122.0");
-//        HashMap<String, Object> ltOptions = new HashMap<String, Object>();
-//        ltOptions.put("username", "shikhabidovarusana");
-//        ltOptions.put("accessKey", "qO0H5R2YUaxl4t5J0UrLpkk4cnNfHeKZNyZI4IHMZb7z6JzDkK");
-//        ltOptions.put("project", "Untitled");
-//        ltOptions.put("w3c", true);
-//        ltOptions.put("plugin", "java-testNG");
-//        browserOptions.setCapability("LT:Options", ltOptions);
-
-}
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("platform", "Windows 10");
+        caps.setCapability("browserName", "Firefox");
+        caps.setCapability("version", "122.0");
+        caps.setCapability("resolution", "1024x768");
+        caps.setCapability("build", "TestNG With Java");
+        caps.setCapability("name", this.getClass().getName());
+        caps.setCapability("plugin", "git-testng");
+        return new RemoteWebDriver(new URL("https://" + username + ":" + authkey + hub), caps);
+    }
 
 
     public WebDriver pickBrowser(String browser) throws MalformedURLException {
