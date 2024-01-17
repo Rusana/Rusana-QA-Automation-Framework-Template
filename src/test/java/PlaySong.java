@@ -8,10 +8,12 @@ import pageObjects.LoginPage;
 import java.net.MalformedURLException;
 
 public class PlaySong extends BaseTest {
+
+
     @Test
     public void playSong() throws MalformedURLException {
 
-        LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage(getThreadLocal());
 
         loginPage.enterEmail("shikhabidovarusana@gmail.com");
         loginPage.enterPassword("te$t$tudent");
@@ -22,8 +24,8 @@ public class PlaySong extends BaseTest {
     }
 
     public void clickButtonControl() {
-        WebElement btnControl = driver.findElement(By.cssSelector("[class='side player-controls']"));
-        new Actions(driver)
+        WebElement btnControl = getThreadLocal().findElement(By.cssSelector("[class='side player-controls']"));
+        new Actions(getThreadLocal())
                 .moveToElement(btnControl)
                 .perform();
 
@@ -31,13 +33,13 @@ public class PlaySong extends BaseTest {
 
     public void clickBtnPlay() {
 
-        WebElement btnPlay = driver.findElement(By.cssSelector("[data-testid='play-btn']"));
+        WebElement btnPlay =getThreadLocal().findElement(By.cssSelector("[data-testid='play-btn']"));
         btnPlay.click();
 
     }
 
     public boolean displaytSoundBar() {
-        WebElement soundBar = driver.findElement(By.cssSelector("[alt='Sound bars']"));
+        WebElement soundBar = getThreadLocal().findElement(By.cssSelector("[alt='Sound bars']"));
         return soundBar.isDisplayed();
     }
 }
