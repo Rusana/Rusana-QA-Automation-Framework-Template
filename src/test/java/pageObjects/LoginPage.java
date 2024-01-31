@@ -15,10 +15,11 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    public void clickBtnRegistration() {
+    public boolean clickBtnRegistration() {
         WebElement btnRegistration = driver.findElement(registration);
         btnRegistration.click();
 
+        return false;
     }
 
     public void clickSubmit() {
