@@ -12,8 +12,6 @@ public class BasePage {
     WebDriver driver;
     Actions actions;
     WebDriverWait wait;
-     WebDriverWait wait;
-     Actions actions;
 
 
     public BasePage(WebDriver driver) {
@@ -28,5 +26,5 @@ public class BasePage {
 }
 
 
-}
+
 

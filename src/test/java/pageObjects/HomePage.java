@@ -20,7 +20,5 @@ public class HomePage extends BasePage {
         // This method returns the userAvatarIcon WebElement, representing the user avatar element on the home page.
     }
 
-    public void setUserAvatarIcon(WebElement userAvatarIcon) {
-        this.userAvatarIcon = userAvatarIcon;
     }
-}
+
