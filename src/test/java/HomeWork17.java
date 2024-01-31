@@ -12,9 +12,9 @@ public class HomeWork17 extends BaseTest { // Объявление класса 
     @Test // Обозначение метода как тестового метода с использованием аннотации @Test
     public void addSongToPlaylist() throws MalformedURLException {
         // Поиск и взаимодействие с элементами веб-страницы
-        LoginPage loginPage = new LoginPage(driver);
-        AllSongs allSongs = new AllSongs(driver);
-        AllPlayListPAge allPlayListPAge = new AllPlayListPAge(driver);
+        LoginPage loginPage = new LoginPage(getThreadLocal());
+        AllSongs allSongs = new AllSongs(getThreadLocal());
+        AllPlayListPAge allPlayListPAge = new AllPlayListPAge(getThreadLocal());
 
         loginPage.enterEmail("shikhabidovarusana@gmail.com");
         loginPage.enterPassword("te$t$tudent");
