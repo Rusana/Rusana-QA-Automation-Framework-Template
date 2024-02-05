@@ -17,7 +17,7 @@ Feature: Login feature
     Then I still Login page
 
   Scenario: Login Not existing email
-    When I enter Not existing email "demo@class.com"
+    When I enter Not existing email "shihabidovarusana@gmail.com"
     And I enter password "te$t$tudent"
     And I submit
     Then I still Login page

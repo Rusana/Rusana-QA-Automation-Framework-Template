@@ -10,6 +10,7 @@ import pageObjects.HomePage;
 import pageObjects.LoginPage;
 
 
+
 public class LoginStepDefinition  {
     @Given("I open Login Page")
     public void openLoginPage() {
@@ -41,24 +42,26 @@ public class LoginStepDefinition  {
 
     @Then("I am logged in")
     public void loggedIn() {
-        HomePage homePage = new HomePage (BaseDefinition.getThreadLocal());
-        Assert.assertTrue(homePage.getUserAvatar().isDisplayed());
+      HomePage homePage = new HomePage (BaseDefinition.getThreadLocal());
+
+        Assert.assertTrue(homePage.getUserAvatar());
         // This step asserts that the user is logged in by checking if the user avatar is displayed on the home page.
     }
-//
-//    @And("I enter incorrect password {string}")
-//    public void enterIncorrectPassword(String password) {
-//        LoginPage loginPage = new LoginPage(BaseDefinition.getThreadLocal());
-//        loginPage.enterIncorrectPassword();
-//        // This step does not perform any action as it is missing the code to enter the incorrect password.
-//    }
-//
-//    @Then("I still Login page")
-//    public void stillLoginPage() {
-//        LoginPage loginPage = new LoginPage(BaseDefinition.getThreadLocal());
-//        Assert.assertTrue(loginPage.clickBtnRegistration());
-//        // This step asserts that the login page is still displayed by checking if the registration link is displayed.
-//    }
+
+    @And("I enter incorrect password {string}")
+    public void enterIncorrectPassword(String password) {
+        LoginPage loginPage = new LoginPage(BaseDefinition.getThreadLocal());
+        // This step does not perform any action as it is missing the code to enter the incorrect password.
+    }
+
+    @Then("I still Login page")
+    public void stillLoginPage() {
+
+        LoginPage loginPage = new LoginPage(BaseDefinition.getThreadLocal());
+        Assert.assertTrue(loginPage.isDisplayedBtnRegistration());
+
+        // This step asserts that the login page is still displayed by checking if the registration link is displayed.
+    }
 
     @When("I enter Not existing email {string}")
     public void enterNotExistingEmail(String email) {
