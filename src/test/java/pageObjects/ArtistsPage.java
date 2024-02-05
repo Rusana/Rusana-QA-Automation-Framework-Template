@@ -8,7 +8,7 @@ public class ArtistsPage extends BasePage{
 
     @FindBy(xpath = "//a[@href='#!/artists'] ")
 
-   private WebElement artistsObject;
+   public WebElement artistsObject;
 
     public ArtistsPage(WebDriver driver) {
 

@@ -4,22 +4,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.net.MalformedURLException;
-
 public class LoginPage extends BasePage {
     By registration = By.cssSelector("[href='registration']");
     By btnLogin = By.cssSelector("[type='submit']");
     By fieldPassword = By.cssSelector("[type='password']");
     By fieldEmail = By.xpath("//input[@type='email']");
 
-    public LoginPage(WebDriver driver) throws MalformedURLException {
+    public LoginPage(WebDriver driver)  {
 
         super(driver);
     }
 
-    public void clickBtnRegistration() {
+    public boolean isDisplayedBtnRegistration() {
         WebElement btnRegistration = driver.findElement(registration);
-        btnRegistration.click();
+return btnRegistration.isDisplayed();
 
     }
 
