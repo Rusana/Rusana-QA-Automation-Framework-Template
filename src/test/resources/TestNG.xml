@@ -2,13 +2,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="TestNG" parallel="methods" thread-count ="4">
-<!--    <test name="KoelTest" preserve-order="false">-->
-<!--        <parameter name="BaseURL" value="https://qa.koel.app/"/>-->
+    <test name="KoelTest" preserve-order="false"/>
+        <parameter name="BaseURL" value="https://qa.koel.app/"/>
     <test name="CucumberTests" preserve-order="false">
 
         <classes>
 
              <class name="CucumberRunner.CucumberRunner"/>
+<!--            <class name="HomeWork23"/>-->
+<!--            <class name="HomeWork17"/>-->
+            <class name="Homework19"/>
+
+
+
         </classes>
     </test>
 </suite>
