@@ -6,9 +6,12 @@
     <test name="Example Test" preserve-order="false">
 
         <classes>
-            <class name="HomeWork16">
-                <methods>
-                    <include name="registrationTest" />
+<!--            <class name="HomeWork16">-->
+            <class name="HomeWork23">
+
+            <methods>
+<!--                    <include name="registrationTest" />-->
+                <include name="PageFactory" />
 
                 </methods>
             </class>
