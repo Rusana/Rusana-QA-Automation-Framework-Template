@@ -24,16 +24,16 @@ ext{
     suit = project.findProperty('suit')?: 'defaultSuiteName'
 }
 
-//
-//test {
-//    useTestNG() {
-//        suites "src/test/resources/TestNG.xml"
-//        systemProperty "browser",System.getProperty("browser")
-//    }
+
 test {
+    useTestNG() {
+        suites "src/test/resources/TestNG.xml"
+        systemProperty "browser", System.getProperty("browser")
+    }
+    test {
     useTestNG() {
         suites "src/test/resources/${suit}.xml"
         systemProperty "browser", System.getProperty("browser")
     }
-
+}
 }
